@@ -1,0 +1,16 @@
+{
+    "Jack" : {
+            "faction": "Hunter",
+            "role": "seller",
+            "location": "tower",
+            "season": "witch",
+            "status": "dead"
+    },
+    "Test" : {
+            "faction": "Hunter",
+            "role": "seller",
+            "location": "tower",
+            "season": "witch",
+            "status": "dead"
+    }
+}
