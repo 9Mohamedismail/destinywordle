@@ -8,7 +8,16 @@ const Cols = styled(Col)`
   border: 1px solid;
 `;
 
-function TableHeader(props) {
+function TableHeader({ addRow, lastGuess, setLastGuess, answer }) {
+  const checkProp = () => {
+    console.log(lastGuess);
+    console.log(answer);
+    if (lastGuess[0] === answer[0]) {
+      console.log("Congrats!");
+      setLastGuess("");
+    }
+  };
+
   return (
     <>
       <Container>
@@ -23,18 +32,21 @@ function TableHeader(props) {
         </Row>
       </Container>
 
-      {props.data.map(([name, details]) => (
-        <Container>
-          <Row>
-            <Cols class="border-end">Photo</Cols>
-            <Cols>{name}</Cols>
-            <Cols>{details.faction}</Cols>
-            <Cols>{details.role}</Cols>
-            <Cols>{details.location}</Cols>
-            <Cols>{details.season}</Cols>
-            <Cols>{details.status}</Cols>
-          </Row>
-        </Container>
+      {addRow.map(([name, details]) => (
+        <>
+          {checkProp()}
+          <Container>
+            <Row>
+              <Cols class="border-end">Photo</Cols>
+              <Cols>{name}</Cols>
+              <Cols>{details.faction}</Cols>
+              <Cols>{details.role}</Cols>
+              <Cols>{details.location}</Cols>
+              <Cols>{details.season}</Cols>
+              <Cols>{details.status}</Cols>
+            </Row>
+          </Container>
+        </>
       ))}
     </>
   );
