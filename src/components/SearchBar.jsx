@@ -1,6 +1,5 @@
-import { React, useState } from "react";
+import React from "react";
 import Button from "react-bootstrap/Button";
-import jsonData from "../test.json";
 
 function SearchBar({ setInputText, inputText, HandleClick }) {
   return (

@@ -1,16 +1,18 @@
 {
-    "Jack" : {
-            "faction": "Hunter",
-            "role": "seller",
-            "location": "tower",
-            "season": "witch",
-            "status": "dead"
+   "Cayde-7" : {
+            "faction": "/public/vanguard.jpg",
+            "species": "Exo",
+            "role": "Vendor",
+            "apperance": "Destiny",
+            "location": "Tower",
+            "status": "Dead"
     },
-    "Test" : {
-            "faction": "Hunter",
-            "role": "seller",
-            "location": "tower",
-            "season": "witch",
-            "status": "dead"
+    "Cayde-6" : {
+            "faction": "/public/vanguard.jpg",
+            "species": "Exo",
+            "role": "Vendor",
+            "apperance": "Destiny",
+            "location": "Tower",
+            "status": "Dead"
     }
 }
