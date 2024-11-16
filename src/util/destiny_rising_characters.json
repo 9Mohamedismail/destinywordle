@@ -1,0 +1,112 @@
+[
+  {
+    "name": "Gwynn",
+    "rarity": "5 Star",
+    "element": "Void",
+    "role": "Offense",
+    "gender": "Female",
+    "class": "Warlock",
+    "primary_weapon": "Submachine Gun",
+    "power_weapon": "Shotgun"
+  },
+  {
+    "name": "Jolder",
+    "rarity": "5 Star",
+    "element": "Void",
+    "role": "Defense",
+    "gender": "Female",
+    "class": "Titan",
+    "primary_weapon": "Submachine Gun",
+    "power_weapon": "Sword"
+  },
+  {
+    "name": "Attal",
+    "rarity": "5 Star",
+    "element": "Arc",
+    "role": "Support",
+    "gender": "Female",
+    "class": "Warlock",
+    "primary_weapon": "Hand Cannon",
+    "power_weapon": "Fusion Rifle"
+  },
+  {
+    "name": "Finnala",
+    "rarity": "4 Star",
+    "element": "Solar",
+    "role": "Defense",
+    "gender": "Female",
+    "class": "Titan",
+    "primary_weapon": "Auto Rifle",
+    "power_weapon": "Sword"
+  },
+  {
+    "name": "Ikora",
+    "rarity": "4 Star",
+    "element": "Void",
+    "role": "Offense",
+    "gender": "Female",
+    "class": "Warlock",
+    "primary_weapon": "Light Grenade Launcher",
+    "power_weapon": "Rocket Launcher"
+  },
+  {
+    "name": "Kabr",
+    "rarity": "4 Star",
+    "element": "Arc",
+    "role": "Defense",
+    "gender": "Male",
+    "class": "Titan",
+    "primary_weapon": "Scout Rifle",
+    "power_weapon": "Machine Gun"
+  },
+  {
+    "name": "Wolf",
+    "rarity": "4 Star",
+    "element": "Solar",
+    "role": "Offense",
+    "gender": "Unknown",
+    "class": "Hunter",
+    "primary_weapon": "Auto Rifle",
+    "power_weapon": "Grenade Launcher"
+  },
+  {
+    "name": "Estela",
+    "rarity": "5 Star",
+    "element": "Solar",
+    "role": "Offense",
+    "gender": "Female",
+    "class": "Warlock",
+    "primary_weapon": "Pulse Rifle",
+    "power_weapon": "Machine Gun"
+  },
+  {
+    "name": "Maru",
+    "rarity": "5 Star",
+    "element": "Void",
+    "role": "Offense",
+    "gender": "Female",
+    "class": "Titan",
+    "primary_weapon": "Light Grenade Launcher",
+    "power_weapon": "Grenade Launcher"
+  },
+  {
+    "name": "Ning Fei",
+    "rarity": "5 Star",
+    "element": "Arc",
+    "role": "Offense",
+    "gender": "Male",
+    "class": "Hunter",
+    "primary_weapon": "Submachine Gun",
+    "power_weapon": "Auto Crossbow"
+  },
+  {
+    "name": "Tan-2",
+    "rarity": "5 Star",
+    "element": "Solar",
+    "role": "Support",
+    "gender": "Unknown",
+    "class": "Warlock",
+    "primary_weapon": "Scout Rifle",
+    "power_weapon": "Sniper Rifle"
+  }
+]
