@@ -7,7 +7,8 @@
     "gender": "Female",
     "class": "Warlock",
     "primary_weapon": "Submachine Gun",
-    "power_weapon": "Shotgun"
+    "power_weapon": "Shotgun",
+    "icon": "public/GachaIcons/Gwynn.png"
   },
   {
     "name": "Jolder",
@@ -17,7 +18,8 @@
     "gender": "Female",
     "class": "Titan",
     "primary_weapon": "Submachine Gun",
-    "power_weapon": "Sword"
+    "power_weapon": "Sword",
+    "icon": "public/GachaIcons/Jolder.png"
   },
   {
     "name": "Attal",
@@ -27,7 +29,8 @@
     "gender": "Female",
     "class": "Warlock",
     "primary_weapon": "Hand Cannon",
-    "power_weapon": "Fusion Rifle"
+    "power_weapon": "Fusion Rifle",
+    "icon": "public/GachaIcons/Attal.png"
   },
   {
     "name": "Finnala",
@@ -37,7 +40,8 @@
     "gender": "Female",
     "class": "Titan",
     "primary_weapon": "Auto Rifle",
-    "power_weapon": "Sword"
+    "power_weapon": "Sword",
+    "icon": "public/GachaIcons/Finnala.png"
   },
   {
     "name": "Ikora",
@@ -47,7 +51,8 @@
     "gender": "Female",
     "class": "Warlock",
     "primary_weapon": "Light Grenade Launcher",
-    "power_weapon": "Rocket Launcher"
+    "power_weapon": "Rocket Launcher",
+    "icon": "public/GachaIcons/Ikora.png"
   },
   {
     "name": "Kabr",
@@ -57,7 +62,8 @@
     "gender": "Male",
     "class": "Titan",
     "primary_weapon": "Scout Rifle",
-    "power_weapon": "Machine Gun"
+    "power_weapon": "Machine Gun",
+    "icon": "public/GachaIcons/Kabr.png"
   },
   {
     "name": "Wolf",
@@ -67,7 +73,8 @@
     "gender": "Unknown",
     "class": "Hunter",
     "primary_weapon": "Auto Rifle",
-    "power_weapon": "Grenade Launcher"
+    "power_weapon": "Grenade Launcher",
+    "icon": "public/GachaIcons/Wolf.png"
   },
   {
     "name": "Estela",
@@ -77,7 +84,8 @@
     "gender": "Female",
     "class": "Warlock",
     "primary_weapon": "Pulse Rifle",
-    "power_weapon": "Machine Gun"
+    "power_weapon": "Machine Gun",
+    "icon": "public/GachaIcons/Estela.png"
   },
   {
     "name": "Maru",
@@ -87,7 +95,8 @@
     "gender": "Female",
     "class": "Titan",
     "primary_weapon": "Light Grenade Launcher",
-    "power_weapon": "Grenade Launcher"
+    "power_weapon": "Grenade Launcher",
+    "icon": "public/GachaIcons/Maru.png"
   },
   {
     "name": "Ning Fei",
@@ -97,7 +106,8 @@
     "gender": "Male",
     "class": "Hunter",
     "primary_weapon": "Submachine Gun",
-    "power_weapon": "Auto Crossbow"
+    "power_weapon": "Auto Crossbow",
+    "icon": "public/GachaIcons/Ning_Fei.png"
   },
   {
     "name": "Tan-2",
@@ -107,6 +117,7 @@
     "gender": "Unknown",
     "class": "Warlock",
     "primary_weapon": "Scout Rifle",
-    "power_weapon": "Sniper Rifle"
+    "power_weapon": "Sniper Rifle",
+    "icon": "public/GachaIcons/Tan-2.png"
   }
 ]
