@@ -1,15 +1,24 @@
-import { React, useState } from "react";
+import { useState, useEffect } from "react";
 import SearchBar from "./components/SearchBar";
 import TableRows from "./components/TableRows";
 import jsonData from "./test.json";
+import gachaDestinyData from "./util/destiny_rising_characters.json"
 import TableHeader from "./components/TableHeader";
-import { Container } from "react-bootstrap";
+
 
 function App() {
   const [inputText, setInputText] = useState("");
   const [addRow, setAddRow] = useState([]);
   const [lastGuess, setLastGuess] = useState([]);
+  console.debug(gachaDestinyData);
 
+  const [selectedCharacter, setSelectedCharacter] = useState(null);
+  
+  useEffect(() => {
+    const randomIndex = Math.floor(Math.random() * gachaDestinyData.length);
+    setSelectedCharacter(gachaDestinyData[randomIndex]);
+  }, []);
+  console.debug("Random character is: ", selectedCharacter);
   const answer = Object.entries(jsonData).find(([key]) => key === "Cayde-6"); // the correct answer (randomized)
 
   const HandleClick = () => {
