@@ -12,6 +12,7 @@ const Cols = styled(Col)`
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: ${({ isMatch }) => (isMatch ? "green" : "red")};
 `;
 
 const Img = styled.img`
@@ -25,6 +26,10 @@ const getMatchResults = (guessObject, answerObject) => {
   }
   return matchResults;
 };
+
+function MatchColumn({ label, isMatch }) {
+  return <Cols isMatch={isMatch}>{label}</Cols>;
+}
 
 function Table({ addRow, lastGuess, answer }) {
   const [rows, setRows] = useState([]);
@@ -48,43 +53,19 @@ function Table({ addRow, lastGuess, answer }) {
       {rows.map(({ details, matches }, index) => (
         <Container key={index}>
           <Row>
-            <Cols style={{ backgroundColor: "gray" }}>
-              <Img src={details.icon} />
+            <Cols>
+              <Img src={details.icon} alt="Icon" />
             </Cols>
-            <Cols style={{ backgroundColor: matches.name ? "green" : "red" }}>
-              {details.name}
-            </Cols>
-            <Cols style={{ backgroundColor: matches.rarity ? "green" : "red" }}>
-              {details.rarity}
-            </Cols>
-            <Cols
-              style={{ backgroundColor: matches.element ? "green" : "red" }}
-            >
-              {details.element}
-            </Cols>
-            <Cols style={{ backgroundColor: matches.role ? "green" : "red" }}>
-              {details.role}
-            </Cols>
-            <Cols style={{ backgroundColor: matches.gender ? "green" : "red" }}>
-              {details.gender}
-            </Cols>
-            <Cols style={{ backgroundColor: matches.class ? "green" : "red" }}>
-              {details.class}
-            </Cols>
-            <Cols
-              style={{
-                backgroundColor: matches.primary_weapon ? "green" : "red",
-              }}
-            >
-              {details.primary_weapon}
-            </Cols>
-            <Cols
-              style={{
-                backgroundColor: matches.power_weapon ? "green" : "red",
-              }}
-            >
-              {details.power_weapon}
-            </Cols>
+            {Object.keys(details).map(
+              (key) =>
+                key !== "icon" && (
+                  <MatchColumn
+                    key={key}
+                    label={details[key]}
+                    isMatch={matches[key]}
+                  />
+                )
+            )}
           </Row>
         </Container>
       ))}

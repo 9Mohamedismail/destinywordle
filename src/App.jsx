@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import SearchBar from "./components/SearchBar";
 import TableRows from "./components/TableRows";
-import jsonData from "./test.json";
 import gachaDestinyData from "./util/destiny_rising_characters.json";
 import TableHeader from "./components/TableHeader";
 
