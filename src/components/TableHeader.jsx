@@ -15,12 +15,13 @@ function TableHeader() {
         <Row>
           <Cols>Photo</Cols>
           <Cols>Name</Cols>
-          <Cols>Faction</Cols>
-          <Cols>Species</Cols>
-          <Cols>Role/Occuipation</Cols>
-          <Cols>Location</Cols>
-          <Cols>First Apperance</Cols>
-          <Cols>Status</Cols>
+          <Cols>Rarity</Cols>
+          <Cols>Element</Cols>
+          <Cols>Role</Cols>
+          <Cols>Gender</Cols>
+          <Cols>Class</Cols>
+          <Cols>Primary Weapon</Cols>
+          <Cols>Power Weapon</Cols>
         </Row>
       </Container>
     </>

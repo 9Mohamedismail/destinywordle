@@ -32,56 +32,58 @@ function Table({ addRow, lastGuess, answer }) {
   useEffect(() => {
     if (!lastGuess || lastGuess.length === 0) return;
 
-    const nameMatches = lastGuess[0] === answer[0];
-
-    const matchResults = getMatchResults(lastGuess[1], answer[1]);
+    const matchResults = getMatchResults(lastGuess, answer);
 
     setRows((prevRows) => [
       ...prevRows,
       {
-        name: lastGuess[0],
-        details: lastGuess[1],
-        matches: { name: nameMatches, ...matchResults },
+        details: lastGuess,
+        matches: { ...matchResults },
       },
     ]);
   }, [addRow]);
 
   return (
     <>
-      {rows.map(({ name, details, matches }, index) => (
+      {rows.map(({ details, matches }, index) => (
         <Container key={index}>
           <Row>
             <Cols style={{ backgroundColor: "gray" }}>
-              <Img src={`/public/${name}.jpg`} />
+              <Img src={details.icon} />
             </Cols>
             <Cols style={{ backgroundColor: matches.name ? "green" : "red" }}>
-              {name}
+              {details.name}
+            </Cols>
+            <Cols style={{ backgroundColor: matches.rarity ? "green" : "red" }}>
+              {details.rarity}
             </Cols>
             <Cols
-              style={{ backgroundColor: matches.faction ? "green" : "red" }}
+              style={{ backgroundColor: matches.element ? "green" : "red" }}
             >
-              <Img src={details.faction} />
-            </Cols>
-            <Cols
-              style={{ backgroundColor: matches.species ? "green" : "red" }}
-            >
-              {details.species}
+              {details.element}
             </Cols>
             <Cols style={{ backgroundColor: matches.role ? "green" : "red" }}>
               {details.role}
             </Cols>
-            <Cols
-              style={{ backgroundColor: matches.location ? "green" : "red" }}
-            >
-              {details.location}
+            <Cols style={{ backgroundColor: matches.gender ? "green" : "red" }}>
+              {details.gender}
+            </Cols>
+            <Cols style={{ backgroundColor: matches.class ? "green" : "red" }}>
+              {details.class}
             </Cols>
             <Cols
-              style={{ backgroundColor: matches.apperance ? "green" : "red" }}
+              style={{
+                backgroundColor: matches.primary_weapon ? "green" : "red",
+              }}
             >
-              {details.apperance}
+              {details.primary_weapon}
             </Cols>
-            <Cols style={{ backgroundColor: matches.status ? "green" : "red" }}>
-              {details.status}
+            <Cols
+              style={{
+                backgroundColor: matches.power_weapon ? "green" : "red",
+              }}
+            >
+              {details.power_weapon}
             </Cols>
           </Row>
         </Container>
