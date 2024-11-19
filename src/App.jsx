@@ -33,7 +33,14 @@ function App() {
   };
 
   return (
-    <>
+    <div
+      style={{
+        backgroundImage: `url('https://www.playdestinyrising.com/pc/gw/20240910191703/img/bg_bottom_a9bfa83d.jpg')`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        height: "100vh",
+      }}
+    >
       <SearchBar
         setInputText={setInputText}
         inputText={inputText}
@@ -45,7 +52,7 @@ function App() {
         lastGuess={lastGuess}
         answer={selectedCharacter}
       />
-    </>
+    </div>
   );
 }
 

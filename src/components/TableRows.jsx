@@ -7,12 +7,16 @@ import styled from "styled-components";
 const Cols = styled(Col)`
   border: 1px solid;
   text-align: center;
-  font-family: Roboto Slab, sans-serif;
+  font-family: "Lucida Grande", Arial;
+  font-weight: bold;
   font-size: 1.2rem;
+  padding: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: ${({ isMatch }) => (isMatch ? "green" : "red")};
+
+  background-color: ${({ isMatch }) =>
+    isMatch ? "rgb(29, 145, 40)" : "rgb(126, 25, 25)"};
 `;
 
 const Img = styled.img`
