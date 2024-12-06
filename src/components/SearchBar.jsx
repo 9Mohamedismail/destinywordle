@@ -4,18 +4,20 @@ import FormControl from "react-bootstrap/FormControl";
 import ListGroup from "react-bootstrap/ListGroup";
 import gachaDestinyData from "../util/destiny_rising_characters.json";
 
-function SearchBar({ setInputText, inputText, HandleClick }) {
+function SearchBar({ setCurrentGuess, currentGuess, HandleButton }) {
   const [filteredSuggestions, setFilteredSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const wrapperRef = useRef(null);
 
   const handleInputChange = (event) => {
     const userInput = event.target.value;
-    setInputText(userInput);
+    setCurrentGuess(userInput);
 
     const suggestions = gachaDestinyData
-      .filter(item => item.name.toLowerCase().includes(userInput.toLowerCase()))
-      .map(item => item.name);
+      .filter((item) =>
+        item.name.toLowerCase().includes(userInput.toLowerCase())
+      )
+      .map((item) => item.name);
 
     setFilteredSuggestions(suggestions);
     setShowSuggestions(userInput.length > 0 || suggestions.length > 0);
@@ -23,15 +25,17 @@ function SearchBar({ setInputText, inputText, HandleClick }) {
 
   const handleFocus = () => {
     const suggestions = gachaDestinyData
-      .filter(item => item.name.toLowerCase().includes(inputText.toLowerCase()))
-      .map(item => item.name);
+      .filter((item) =>
+        item.name.toLowerCase().includes(currentGuess.toLowerCase())
+      )
+      .map((item) => item.name);
 
     setFilteredSuggestions(suggestions);
     setShowSuggestions(suggestions.length > 0);
   };
 
   const handleSuggestionClick = (suggestion) => {
-    setInputText(suggestion);
+    setCurrentGuess(suggestion);
     setShowSuggestions(false);
   };
 
@@ -51,7 +55,7 @@ function SearchBar({ setInputText, inputText, HandleClick }) {
   return (
     <div ref={wrapperRef}>
       <FormControl
-        value={inputText}
+        value={currentGuess}
         onChange={handleInputChange}
         onFocus={handleFocus}
         placeholder="Search..."
@@ -71,7 +75,7 @@ function SearchBar({ setInputText, inputText, HandleClick }) {
         </ListGroup>
       )}
 
-      <Button variant="primary" type="submit" onClick={HandleClick}>
+      <Button variant="primary" type="submit" onClick={HandleButton}>
         Search
       </Button>
     </div>

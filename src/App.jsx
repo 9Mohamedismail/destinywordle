@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
 import SearchBar from "./components/SearchBar";
-import TableRows from "./components/TableRows";
+import TableLogic from "./components/TableLogic";
 import gachaDestinyData from "./util/destiny_rising_characters.json";
 import TableHeader from "./components/TableHeader";
 
 function App() {
-  const [inputText, setInputText] = useState("");
-  const [addRow, setAddRow] = useState([]);
-  const [lastGuess, setLastGuess] = useState([]);
+  const [guesses, setGuesses] = useState([]); // Array holding guesses player has made.
+  const [currentGuess, setCurrentGuess] = useState(""); // Current guess from searchBar.
   console.debug(gachaDestinyData);
 
+  // Selected character to be guessed.
   const [selectedCharacter, setSelectedCharacter] = useState(null);
 
   useEffect(() => {
@@ -18,17 +18,17 @@ function App() {
   }, []);
   console.debug("Random character is: ", selectedCharacter);
 
-  const HandleClick = () => {
-    const newRow = gachaDestinyData.find(
-      (character) => character.name === inputText
+  // Checks if players's guess is valid & either adds it to array or gives error.
+  const HandleButton = () => {
+    const currentGuessObject = gachaDestinyData.find(
+      (character) => character.name === currentGuess
     );
 
-    if (newRow) {
-      setAddRow([...addRow, newRow]);
-      setLastGuess(newRow);
-      setInputText("");
+    if (currentGuessObject) {
+      setGuesses([...guesses, currentGuessObject]);
+      setCurrentGuess("");
     } else {
-      console.log("Error!");
+      console.log("Invalid guess!");
     }
   };
 
@@ -42,16 +42,12 @@ function App() {
       }}
     >
       <SearchBar
-        setInputText={setInputText}
-        inputText={inputText}
-        HandleClick={HandleClick}
+        setCurrentGuess={setCurrentGuess}
+        currentGuess={currentGuess}
+        HandleButton={HandleButton}
       />
       <TableHeader />
-      <TableRows
-        addRow={addRow}
-        lastGuess={lastGuess}
-        answer={selectedCharacter}
-      />
+      <TableLogic guesses={guesses} answer={selectedCharacter} />
     </div>
   );
 }

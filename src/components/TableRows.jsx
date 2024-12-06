@@ -23,35 +23,13 @@ const Img = styled.img`
   width: 100%;
   height: 100%;
 `;
-const getMatchResults = (guessObject, answerObject) => {
-  const matchResults = {};
-  for (let key in guessObject) {
-    matchResults[key] = guessObject[key] === answerObject[key];
-  }
-  return matchResults;
-};
 
+// Handles render of colored columns depending on if its correct or not.
 function MatchColumn({ label, isMatch }) {
   return <Cols isMatch={isMatch}>{label}</Cols>;
 }
 
-function Table({ addRow, lastGuess, answer }) {
-  const [rows, setRows] = useState([]);
-
-  useEffect(() => {
-    if (!lastGuess || lastGuess.length === 0) return;
-
-    const matchResults = getMatchResults(lastGuess, answer);
-
-    setRows((prevRows) => [
-      ...prevRows,
-      {
-        details: lastGuess,
-        matches: { ...matchResults },
-      },
-    ]);
-  }, [addRow]);
-
+function TableRows({ rows }) {
   return (
     <>
       {rows.map(({ details, matches }, index) => (
@@ -77,4 +55,4 @@ function Table({ addRow, lastGuess, answer }) {
   );
 }
 
-export default Table;
+export default TableRows;
