@@ -10,6 +10,7 @@ const Cols = styled(Col)`
   font-family: "Lucida Grande", Arial;
   font-weight: bold;
   font-size: 1.2rem;
+  color: black;
   padding: 10px;
   display: flex;
   align-items: center;

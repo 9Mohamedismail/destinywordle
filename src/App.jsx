@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 import SearchBar from "./components/SearchBar";
 import TableLogic from "./components/TableLogic";
+import GameInfo from "./components/GameInfo";
 import gachaDestinyData from "./util/destiny_rising_characters.json";
 import TableHeader from "./components/TableHeader";
 
 function App() {
   const [guesses, setGuesses] = useState([]); // Array holding guesses player has made.
   const [currentGuess, setCurrentGuess] = useState(""); // Current guess from searchBar.
+  const [gameOver, setGameOver] = useState(false);
   console.debug(gachaDestinyData);
 
   // Selected character to be guessed.
@@ -25,6 +27,9 @@ function App() {
     );
 
     if (currentGuessObject) {
+      if (currentGuessObject === selectedCharacter) {
+        setGameOver(true);
+      }
       setGuesses([...guesses, currentGuessObject]);
       setCurrentGuess("");
     } else {
@@ -38,16 +43,20 @@ function App() {
         backgroundImage: `url('https://www.playdestinyrising.com/pc/gw/20240910191703/img/bg_bottom_a9bfa83d.jpg')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        height: "100vh",
+        height: "200vh",
       }}
     >
-      <SearchBar
+      <GameInfo
         setCurrentGuess={setCurrentGuess}
         currentGuess={currentGuess}
         HandleButton={HandleButton}
+        guesses={guesses}
+        gameOver={gameOver}
+        setGameOver={setGameOver}
+        selectedCharacter={selectedCharacter}
       />
       <TableHeader />
-      <TableLogic guesses={guesses} answer={selectedCharacter} />
+      <TableLogic guesses={guesses} selectedCharacter={selectedCharacter} />
     </div>
   );
 }

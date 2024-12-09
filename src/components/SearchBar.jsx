@@ -75,7 +75,12 @@ function SearchBar({ setCurrentGuess, currentGuess, HandleButton }) {
         </ListGroup>
       )}
 
-      <Button variant="primary" type="submit" onClick={HandleButton}>
+      <Button
+        variant="primary"
+        type="submit"
+        onClick={HandleButton}
+        style={{ marginTop: "10px" }}
+      >
         Search
       </Button>
     </div>
