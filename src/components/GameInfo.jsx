@@ -8,10 +8,15 @@ const Containter = styled.div`
   font-family: "Lucida Grande", Arial;
   font-weight: bold;
   color: #bda775;
+  font-size: 50px;
 `;
 
 const InfoContainer = styled.div`
   font-size: 1.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
 `;
 
 const SearchBarContainer = styled.div`
@@ -19,14 +24,16 @@ const SearchBarContainer = styled.div`
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: center;
+  font-size: 1.2rem;
 `;
 
 const GameOverContainer = styled.div`
-  padding: 10px;
-  text-align: center;
-  font-family: "Lucida Grande", Arial;
-  font-weight: bold;
-  color: #bda775;
+  border: 5px solid #bda775;
+  color: black;
+  display: inline-block;
+  padding: 1rem 5rem 1rem 5rem;
+  font-size: 1.5rem;
+  background-color: ${({ userWon }) => (userWon ? "LightGreen" : "IndianRed")};
 `;
 
 function GameInfo({
@@ -46,7 +53,7 @@ function GameInfo({
 
   return (
     <Containter>
-      <h1>Destiny Rising Wordle</h1>
+      <p>Destiny Rising Wordle</p>
       <InfoContainer>
         <p>Tries {guesses.length}/5 </p>
         <p>Win Streak: 0</p>
@@ -63,7 +70,7 @@ function GameInfo({
       )}
 
       {gameOver && (
-        <GameOverContainer>
+        <GameOverContainer userWon={guesses.length < 5}>
           {guesses.length < 5 ? <h1>You won!</h1> : <h1>Game over!</h1>}
           <p>The Character was {selectedCharacter.name} </p>
         </GameOverContainer>

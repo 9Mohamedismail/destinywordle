@@ -36,7 +36,7 @@ function TableRows({ rows }) {
       {rows.map(({ details, matches }, index) => (
         <Container key={index}>
           <Row>
-            <Cols>
+            <Cols isMatch={matches.name}>
               <Img src={details.icon} alt="Icon" />
             </Cols>
             {Object.keys(details).map(

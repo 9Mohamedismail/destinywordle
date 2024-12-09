@@ -43,7 +43,7 @@ function App() {
         backgroundImage: `url('https://www.playdestinyrising.com/pc/gw/20240910191703/img/bg_bottom_a9bfa83d.jpg')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        height: "200vh",
+        height: "150vh",
       }}
     >
       <GameInfo
