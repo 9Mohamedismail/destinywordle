@@ -15,17 +15,21 @@ function TableLogic({ guesses, selectedCharacter }) {
 
   useEffect(() => {
     if (!guesses || guesses.length === 0) return;
-    const currentGuess = guesses[guesses.length - 1];
+    setRows([]);
 
-    const matchResults = getMatchResults(currentGuess, selectedCharacter);
+    for (let key in guesses) {
+      const currentGuess = guesses[key];
 
-    setRows((prevRows) => [
-      ...prevRows,
-      {
-        details: currentGuess,
-        matches: { ...matchResults },
-      },
-    ]);
+      const matchResults = getMatchResults(currentGuess, selectedCharacter);
+
+      setRows((prevRows) => [
+        ...prevRows,
+        {
+          details: currentGuess,
+          matches: { ...matchResults },
+        },
+      ]);
+    }
   }, [guesses]);
 
   return <TableRows rows={rows} />;

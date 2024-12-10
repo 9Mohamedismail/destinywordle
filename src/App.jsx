@@ -4,6 +4,7 @@ import TableLogic from "./components/TableLogic";
 import GameInfo from "./components/GameInfo";
 import gachaDestinyData from "./util/destiny_rising_characters.json";
 import TableHeader from "./components/TableHeader";
+import { use } from "react";
 
 function App() {
   const [guesses, setGuesses] = useState([]); // Array holding guesses player has made.
@@ -19,6 +20,25 @@ function App() {
     setSelectedCharacter(gachaDestinyData[randomIndex]);
   }, []);
   console.debug("Random character is: ", selectedCharacter);
+
+  useEffect(() => {
+    const guessesStorage = window.localStorage.getItem("Guesses");
+    const characterStorage = window.localStorage.getItem("Character");
+    if (guessesStorage && characterStorage) {
+      setGuesses(JSON.parse(guessesStorage));
+      setSelectedCharacter(JSON.parse(characterStorage));
+    }
+  }, []);
+
+  useEffect(() => {
+    if (guesses.length > 0) {
+      window.localStorage.setItem("Guesses", JSON.stringify(guesses));
+      window.localStorage.setItem(
+        "Character",
+        JSON.stringify(selectedCharacter)
+      );
+    }
+  }, [guesses, selectedCharacter]);
 
   // Checks if players's guess is valid & either adds it to array or gives error.
   const HandleButton = () => {
@@ -36,6 +56,13 @@ function App() {
       console.log("Invalid guess!");
     }
   };
+
+  useEffect(() => {
+    if (gameOver) {
+      window.localStorage.removeItem("Guesses");
+      window.localStorage.removeItem("Character");
+    }
+  }, [gameOver]);
 
   return (
     <div
